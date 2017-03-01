@@ -37,12 +37,6 @@
 		</contributor>
 	</contributors>
 
-	<scm>
-		<connection>scm:git:git@github.com:thiagolocatelli/parse4j.git</connection>
-		<developerConnection>scm:git:git@github.com:thiagolocatelli/parse4j.git</developerConnection>
-		<url>git@github.com:thiagolocatelli/parse4j.git</url>
-	</scm>
-
 	<properties>
 		<maven.test.skip>true</maven.test.skip>
 		<maven.test.failure.ignore>false</maven.test.failure.ignore>
