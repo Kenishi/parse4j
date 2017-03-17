@@ -55,6 +55,12 @@ public class Parse {
 		mMasterKey = masterKey;
 		isRootMode = true;
 	}
+	
+	static public void initializeAsRoot(String applicationId, String masterKey, String serverPath) {
+		initializeAsRoot(applicationId, masterKey);
+		sServerPath = serverPath;
+		bCustomServer = true;
+	}
 
 	static public String getApplicationId() {
 		return mApplicationId;
