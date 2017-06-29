@@ -39,7 +39,9 @@ import org.slf4j.LoggerFactory;
 public class ParseObject {	
 	
 	private static Logger LOGGER = LoggerFactory.getLogger(ParseObject.class);
-
+	
+	private JSONObject initialJson;
+	
 	private String objectId;
 	private String className;
 	private String endPoint;
@@ -702,6 +704,8 @@ public class ParseObject {
 		  setData(jsonObject, false);  
 	}
 	protected void setData(JSONObject jsonObject, boolean disableChecks) {
+		this.initialJson = jsonObject;
+		
 		Iterator<?> it = jsonObject.keys();
 		while (it.hasNext()) {
 			String key = (String) it.next();
@@ -729,5 +733,9 @@ public class ParseObject {
 		else if("updatedAt".equals(key)) {
 			setUpdatedAt(Parse.parseDate(value.toString()));
 		}		
+	}
+	
+	public JSONObject getInitialJson() {
+		return this.initialJson;
 	}
 }
